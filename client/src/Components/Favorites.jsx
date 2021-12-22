@@ -5,7 +5,6 @@ import FavoriteWork from "./FavoriteWork";
 import MyFavNavbar from "./MyFavNavbar";
 import FavoritesHamburger from "./FavoritesHamburger";
 import Contact from "./Contact";
-import { Home } from "@material-ui/icons";
 import Buttons from "./Buttons";
 
 function Checkout(props) {
@@ -93,30 +92,32 @@ function Checkout(props) {
               </p>
             </div>
           ) : (
-            <div>
-              <h2 className="checkout-title">My Favorite Designs</h2>
+            <div className="checkout-works">
+              <div>
+                <h2 className="checkout-title">My Favorite Designs</h2>
 
-              {/* list out all the checkout products */}
-              <div className="works">
-                {basket.map((work, index) => {
-                  return (
-                    <FavoriteWork
-                      key={work.id}
-                      id={work.id}
-                      img={work.img}
-                      category={work.category}
-                      onRemoveFav={addFav}
+                {/* list out all the checkout products */}
+                <div className="works">
+                  {basket.map((work, index) => {
+                    return (
+                      <FavoriteWork
+                        key={work.id}
+                        id={work.id}
+                        img={work.img}
+                        category={work.category[1]}
+                        onRemoveFav={addFav}
+                      />
+                    );
+                  })}
+                </div>
+                <div style={{ margin: "20px 0" }}>
+                  <li onClick={displayContactDiv}>
+                    <Buttons
+                      value="Hire me"
+                      className="btn btn-for-favorites btn-with-bg"
                     />
-                  );
-                })}
-              </div>
-              <div style={{ marginTop: "20px" }}>
-                <li onClick={displayContactDiv}>
-                  <Buttons
-                    value="Hire me"
-                    className="btn btn-for-favorites btn-with-bg"
-                  />
-                </li>
+                  </li>
+                </div>
               </div>
             </div>
           )}

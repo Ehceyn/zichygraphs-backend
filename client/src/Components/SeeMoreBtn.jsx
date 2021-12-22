@@ -9,6 +9,7 @@ function SeeMoreBtn(props) {
           fontWeight: 400,
           textTransform: "lowercase",
           fontSize: "1rem",
+          background: "#c6c5c969",
         }}
       >
         {props.status}

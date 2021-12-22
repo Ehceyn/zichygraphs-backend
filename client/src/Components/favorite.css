@@ -30,6 +30,35 @@
   color: white;
 }
 
+.checkout-works-div {
+  margin: 10px;
+  width: 250px;
+  height: 320px;
+  background-color: #ffffff;
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  box-shadow: 0.1px 0.1px 10px rgba(147, 150, 148, 0.1);
+  cursor: default;
+}
+
+@media all and (max-width: 425px) {
+  .checkout {
+    padding: 0;
+    align-items: center;
+  }
+  .checkout-works-div {
+    margin: 10px 0;
+    padding: 10px 10px;
+  }
+  .checkout-ad {
+    padding: 20px;
+  }
+  .checkout-works {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .checkoutFavs-remove-btn {
   border: none;
 }

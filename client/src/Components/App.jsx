@@ -3,7 +3,6 @@ import "../App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Favorites from "./Favorites";
-import Contact from "./Contact";
 import Footer from "./Footer";
 
 function App() {

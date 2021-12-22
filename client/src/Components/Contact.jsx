@@ -10,7 +10,6 @@ import emailjs from "emailjs-com";
 import { SocialIcon } from "react-social-icons";
 import { Container } from "@material-ui/core";
 import { Check, ErrorOutlineRounded } from "@material-ui/icons";
-// import Mediaquery from './mediaquery';
 
 const CssTextField = withStyles({
   root: {
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     justifySelf: "center",
-    width: "30ch",
+    width: "27ch",
   },
 }));
 
@@ -154,17 +153,16 @@ export default function Contact(props) {
       );
       form.current.reset();
     } else {
-      setFormValidate({
-        color: "red",
-        borderBottomColor: "red",
+      setMessage({
+        icon: (
+          <ErrorOutlineRounded
+            style={{ width: "70px", height: "70px", color: "red" }}
+          />
+        ),
+        title: "Ooops, something went wrong",
+        text: "Please fill all fields marked with asterisks  correctly",
       });
-      setFormValue({
-        fullname: "Please input your fullname",
-        title: "",
-        email: "Please input a valid e-mail",
-        message: "Please write your message",
-        phone: "",
-      });
+      setMessageDisplay("flex");
       return false;
     }
   };

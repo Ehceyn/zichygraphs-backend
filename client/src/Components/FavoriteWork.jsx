@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from "../StateProvider";
 import { RemoveRedEye } from "@material-ui/icons";
-import works from "./data";
 
 function CheckoutFavs(props) {
   const [{ basket }, dispatch] = useStateValue();
@@ -17,23 +16,6 @@ function CheckoutFavs(props) {
     }
   }, []);
 
-  const addFav = (props) => {
-    let array = favorites;
-    let addArray = true;
-    array.forEach((item, key) => {
-      if (item === props.id) {
-        array.splice(key, 1);
-        addArray = false;
-      }
-    });
-    if (addArray) {
-      array.push(props.id);
-    }
-    setFavorites([...array]);
-    localStorage.setItem("favs", JSON.stringify(favorites));
-    console.log(favorites);
-  };
-
   const removeFromBasket = () => {
     // passes the id to the reducer to remove the id from basket and return the state and the remaining basket items
 
@@ -44,7 +26,7 @@ function CheckoutFavs(props) {
   };
 
   return (
-    <div className="works-div">
+    <div className="checkout-works-div">
       <div
         onClick={() => {
           props.viewThisProject(props.id);
